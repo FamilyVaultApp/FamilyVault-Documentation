@@ -1,5 +1,6 @@
 {
   "name": "familyvault",
+  "description": "Dokumentacja projektu FamilyVault",
   "version": "0.0.0",
   "private": true,
   "scripts": {
