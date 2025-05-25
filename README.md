@@ -1,41 +1,67 @@
-# Website
+<img width="148" alt="icon2" src="https://github.com/user-attachments/assets/55d65d04-a448-48cd-b874-2e14ee4b69ea" />
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+# Dokumentacja FamilyVault
 
-### Installation
 
-```
-$ yarn
-```
+Oficjalna dokumentacja aplikacji **FamilyVault** – prywatnego komunikatora rodzinnego z szyfrowaniem end-to-end.
 
-### Local Development
+## O projekcie
 
-```
-$ yarn start
-```
+FamilyVault to bezpieczna aplikacja mobilna przeznaczona dla rodzin, oferująca:
+- Szyfrowanie end-to-end (E2EE)
+- Bezpieczne czaty grupowe i indywidualne
+- Listy zadań dla organizacji życia rodzinnego
+- Szuflada na dokumenty i zdjęcia
+- Możliwość własnego hostingu (PrivMX Bridge)
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Instalacja
 
-### Build
+Sklonuj repozytorium i zainstaluj zależności:
 
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
+```bash
+git clone https://github.com/FamilyVaultApp/FamilyVault-Documentation.git
+cd FamilyVault-Documentation
+npm install
 ```
 
-Not using SSH:
+## Rozwój lokalny
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
+Uruchom serwer deweloperski:
+
+```bash
+npm start
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Ta komenda uruchamia lokalny serwer deweloperski i otwiera przeglądarkę. Większość zmian zostanie odzwierciedlona na żywo bez konieczności restartowania serwera.
+
+## Budowanie
+
+Zbuduj statyczną wersję strony:
+
+```bash
+npm run build
+```
+
+Ta komenda generuje statyczną zawartość do katalogu `build`, którą można serwować za pomocą dowolnego serwisu hostingu statycznych plików.
+
+
+## Skrypty
+
+- `npm start` - uruchomienie serwera deweloperskiego
+- `npm run build` - budowanie wersji produkcyjnej
+- `npm run serve` - serwowanie zbudowanej wersji lokalnie
+- `npm run clear` - czyszczenie cache'u Docusaurus
+- `npm run typecheck` - sprawdzanie typów TypeScript
+
+## Technologie
+
+- [Docusaurus 3.7.0](https://docusaurus.io/) - generator statycznych stron
+- React 19 - biblioteka interfejsu użytkownika
+- TypeScript - typy dla JavaScript
+- MDX - Markdown z komponentami React
+
+## Linki
+
+- [Strona projektu](https://familyvault.pl/)
+- [Organizacja GitHub](https://github.com/FamilyVaultApp)
+
