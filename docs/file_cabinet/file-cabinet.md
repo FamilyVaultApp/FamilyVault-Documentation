@@ -16,8 +16,6 @@ Wchodząc pierwszy raz na ekran szuflady przywita nas informacja, o tym że jest
 
 Aby dodać do niej zdjęcia lub dokumenty należy użyć przycisku znajdującego się w prawym dolnym rogu ekranu.
 
->  **Ważne:** Zwróć uwagę, 
-
 ![Add photos button](./img/file_cabinet_add_button.png)
 
 >  **Ważne:** Jeżeli Twój telefon poprosi o zgodę na dostęp do plików przez FamilyVault musisz ją wyrazić, aby skorzystać z tej funkcjonalności.
