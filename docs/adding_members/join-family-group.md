@@ -1,10 +1,10 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Tworzenie grupy rodzinnej 
+# Dołączanie do grupy rodzinnej 
 
-Ta sekcja wytłumaczy Twoje pierwsze kroki w FamilyVault, czyli jak założyć lub dołączyć do grupy rodzinnej.
+Ta sekcja wytłumaczy Twoje pierwsze kroki w FamilyVault, czyli jak dołączyć do grupy rodzinnej.
 
 ## Wybór sposobu połączenia z serwerem
 
@@ -18,26 +18,27 @@ Jeżeli posiadasz wiedzę techniczną i chciałbyś skorzystać z własnego serw
 
 Po zaznaczeniu odpowiedniej opcji kliknij przycisk **Dalej** znajdujący się u dołu ekranu.
 
-## Załóż lub dołącz do grupy rodzinnej
+## Dołącz do grupy rodzinnej
 
 Po zaakceptowaniu wstępnych ekranów powitalnych aplikacja poprosi Cię o określenie, czy chcesz dołączyć do istniejącej grupy rodzinnej, czy utworzyć nową.
 
 ![Create or join family group](./img/join_create.png)
 
-W tej części dokumentacji skupimy się na **tworzeniu nowej grupy rodzinnej**.
+W tej części dokumentacji skupiamy się na opcji **dołączania do grupy rodzinnej**. 
 
-Po dokonaniu wyboru naciśnij przycisk Dalej, aby kontynuować konfigurację.
+Po dokonaniu wyboru naciśnij przycisk **Dalej**, aby kontynuować konfigurację.
 
-## Utwórz grupę rodzinną
+## Dołącz do istniejącej grupy
 
-Po wybraniu opcji **Utwórz grupę rodzinną** zobaczysz pierwszą część formularza, dzięki któremu założysz swoją grupę rodzinną.
+Po wybraniu opcji **Dołącz do istniejącej grupy** zobaczysz pierwszą część formularza, dzięki któremu dołączysz do grupy rodzinną.
 
-![Create family group form](./img/family_group_create_info.png)
+![Join family group form](./img/family_group_join_info.png)
 
-Wpisz tutaj swoje imię lub nazwę użytkownika oraz nazwę nowej grupy rodzinnej. Opcjonalnie możesz również dodać swoje nazwisko.
+Wpisz tutaj swoje imię lub nazwę użytkownika, opcjonalnie możesz również dodać swoje nazwisko.
 W razie jakichkolwiek niepoprawnych danych informacja o tym co poszło nie tak znajdzie się pod polem, którego błąd dotyczy.
 
 Po wypełnieniu wszystkich informacji naciśnij **Dalej**.
+
 
 ## Ustawianie hasła klucza prywatnego
 
@@ -56,6 +57,7 @@ Zalecamy użycie:
 - Małych i wielkich liter,
 - Cyfr oraz znaków specjalnych.
 
-Wpisz dwukrotnie hasło oraz kliknij **Dalej**. Po chwili znajdziesz się na ekranie głównym aplikacji **FamilyVault**!
+Po dwukrotnym wpisaniu hasła naciśnij **Dalej**.
 
+## Dołączanie do grupy rodzinnej - NFC i kod QR
 

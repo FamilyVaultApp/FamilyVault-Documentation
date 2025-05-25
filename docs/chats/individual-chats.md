@@ -1,14 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Ekran czatów
-
-Zakładka czatów jest domyślną zakładką, która pokazuje się po uruchomieniu aplikacji jako członek grupy rodzinnej.
-
-![Chats main screen](./img/chats_main_screen.png)
-
-Wątki czatów są podzielone na dwie kategorie - indywidualne oraz grupowe. Przy dołączaniu do grupy rodzinnej, czaty indywidualne są tworzone automatycznie dla każdego członka grupy, dzięki czemu natychmiast możesz napisać do dowolnej osoby w Twojej grupie rodzinnej.
+# Wątki indywidualne
 
 ## Ekran wątku czatu
 

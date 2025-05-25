@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Wątki grupowe
@@ -32,6 +32,6 @@ Możesz go edytować dzięki ikonie koła zębatego w prawym górnym rogu ekranu
 > Jeżeli nie widzisz ikony koła zębatego - nie spełniasz żadnego z powyższych warunków i nie możesz edytować tego wątku.
 
 Po kliknięciu w koło zębate zostaniemy przeniesieni do formularza analogicznego do formularza tworzenia czatu grupowego. Możemy tutaj dodać lub usunąć członków czatu, zmienić ikonę wątku oraz jego nazwę.
-> 🔒 **Ważne:** Nie możesz usunąć samego siebie.
+> 🔒 **Ważne:** Nie możesz usunąć samego siebie z wątku czatu.
 
 ![Group chat edit](./img/chat_group_edit.png)
