@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Pierwsze uruchomienie aplikacji
+# Tworzenie lub dołączanie do grupy rodzinnej 
 
 Ta sekcja wytłumaczy Twoje pierwsze kroki w FamilyVault, czyli jak założyć lub dołączyć do grupy rodzinnej.
 
@@ -77,6 +77,7 @@ Zalecamy użycie:
 Po dwukrotnym wpisaniu hasła naciśnij **Dalej**.
 
 Jeżeli **dołączasz do grupy rodzinnej** przejdź do [tej sekcji](#dołączanie-do-grupy-rodzinnej---nfc-i-kod-qr).
+Jeżeli **tworzysz nową grupę rodzinną** po chwili znajdziesz się na ekranie głównym aplikacji.
 
 ## Dołączanie do grupy rodzinnej - NFC i kod QR
 

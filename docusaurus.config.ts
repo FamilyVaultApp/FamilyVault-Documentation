@@ -87,7 +87,7 @@ const config: Config = {
                     items: [
                         {
                             label: 'Strona projektu',
-                            href: 'https://aleks-2.mat.umk.pl/pz2024/zesp01/',
+                            href: 'https://familyvault.pl/',
                         },
                         {
                             label: 'Github',
