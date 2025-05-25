@@ -10,4 +10,4 @@ Szuflada jest bezpiecznym schowkiem na zdjęcia oraz dokumenty Twojej grupy rodz
 
 ## Tworzenie szuflady
 
-Utworzenie specjalnej szuflady na zdjęcia i dokumenty nie wymaga żadnych akcji użytkownika - tworzone są one automatycznie w momencie 
+Utworzenie specjalnej szuflady na zdjęcia i dokumenty nie wymaga żadnych akcji użytkownika - tworzona jest ona automatycznie w momencie tworzenia nowej grupy rodzinnej.
