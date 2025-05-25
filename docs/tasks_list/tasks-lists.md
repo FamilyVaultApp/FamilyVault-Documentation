@@ -20,7 +20,7 @@ Po wejściu do zakładki Listy zadań po raz pierwszy otrzymamy informację, że
 
 ## Tworzenie nowej listy zadań
 
-> 🔒 **Ważne:** Tylko Opiekunowie grupy rodzinnej mogą utworzyć listę zadań.
+> **Ważne:** Tylko Opiekunowie grupy rodzinnej mogą utworzyć listę zadań.
 
 Po wybraniu opcji **Stwórz** zostaniemy przeniesieni do formularza tworzenia nowej listy zadań. Po wypełnieniu pola **Tytuł** możemy kontynuować przyciskiem **Stwórz** u dołu ekranu.
 
@@ -36,7 +36,7 @@ Po utworzeniu listy zadań możemy ją edytować lub usunąć. Aby wejść do ek
 
 ![Task list edit button](./img/task_list_edit_button.png)
 
-> 🔒 **Ważne:** Edytować listę zadań mogą tylko Opiekunowie grupy rodzinnej.
+> **Ważne:** Edytować listę zadań mogą tylko Opiekunowie grupy rodzinnej.
 
 Zostaniemy przeniesieni do ekranu edycji listy zadań. Możemy tam zmienić jej nazwę, a także usunąć ją używając przycisku na dole ekranu.
 

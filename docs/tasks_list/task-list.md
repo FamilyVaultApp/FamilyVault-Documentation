@@ -8,7 +8,7 @@ sidebar_position: 2
 
 Aby dodać nowe zadanie użyj przycisku w prawym dolnym rogu ekranu.
 
-> 🔒 **Ważne:** Każdy członek grupy rodzinnej może dodać nowe zadanie.
+> **Ważne:** Każdy członek grupy rodzinnej może dodać nowe zadanie.
 
 ![Task list new task button](./img/task_list_new_task_button.png)
 

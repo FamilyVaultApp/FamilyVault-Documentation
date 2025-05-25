@@ -14,7 +14,7 @@ Na ekranie głównym ustawień znajdziemy opcję **Dołącz lub utwórz grupę r
 
 Aby przełączyć się na inną grupę rodzinną wejdź w zakładkę **Zmień grupę rodzinną** z ekranu głównego ustawień. Na tym ekranie znajdziemy listę wszystkich grup rodzinnych, których członkami jesteśmy. Pod jej nazwą znajdują się informacje czy dana grupa rodzinna jest **domyślna** lub **aktualna**. 
 
-> 🔒 **Ważne:** **Domyślną** grupą rodzinną jest ta grupa, do której logujemy się przy uruchomieniu aplikacji. **Aktualną** grupą rodzinną jest ta grupa, do której jesteśmy obecnie zalogowani. Przycisk **Dodaj lub utwórz grupę rodzinną** przeniesie nas do ekranów, o których jest mowa na stronie [Pierwsze uruchomienie aplikacji](../first_launch/first-launch.md).
+> **Ważne:** **Domyślną** grupą rodzinną jest ta grupa, do której logujemy się przy uruchomieniu aplikacji. **Aktualną** grupą rodzinną jest ta grupa, do której jesteśmy obecnie zalogowani. Przycisk **Dodaj lub utwórz grupę rodzinną** przeniesie nas do ekranów, o których jest mowa na stronie [Pierwsze uruchomienie aplikacji](../first_launch/first-launch.md).
 
 Aby zmienić **domyślną** grupę rodzinną wystarczy użyć ikony **gwiazdki** znajdującej się po prawej stronie.
 

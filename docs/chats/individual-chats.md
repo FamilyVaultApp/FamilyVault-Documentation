@@ -23,7 +23,7 @@ Ikonka po prawej stronie zatwierdza wysłanie wiadomości.
 
 Aby wysłać wiadomość głosową naciśnij ikonkę mikrofonu na dole ekranu. Jeżeli telefon poprosi Cię o wyrażenie zgody na używanie mikrofonu przez aplikację musisz ją zaakceptować, aby skorzystać z tej funkcjonalności.
 
-> 🔒 **Ważne:** Korzystamy z mikrofonu Twojego telefonu tylko **w trakcie** nagrywania wiadomości głosowej.
+> **Ważne:** Korzystamy z mikrofonu Twojego telefonu tylko **w trakcie** nagrywania wiadomości głosowej.
 
 Aby anulować wysłanie wiadomości użyj ikony **kosza** po lewej stronie ekranu.
 
@@ -37,4 +37,4 @@ Gdy członek wątku czatu, w którym jesteś wyśle wiadomość głosową pojawi
 
 Aby wysłać zdjęcie na swój wątek czatu naciśnij ikonkę obrazka. Otworzy się wówczas galeria Twojego telefonu.
 
-> 🔒 **Ważne:** Jeżeli Twój telefon poprosi o zgodę na dostęp do galerii przez FamilyVault musisz ją wyrazić, aby skorzystać z tej funkcjonalności.
+> **Ważne:** Jeżeli Twój telefon poprosi o zgodę na dostęp do galerii przez FamilyVault musisz ją wyrazić, aby skorzystać z tej funkcjonalności.
