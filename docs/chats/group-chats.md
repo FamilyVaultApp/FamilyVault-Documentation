@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Wątki grupowe
@@ -26,12 +26,12 @@ Podobnie do wątków indywidualnych, aby wejść do interesującego nas wątku g
 
 Możesz go edytować dzięki ikonie koła zębatego w prawym górnym rogu ekranu.
 
-> 🔒 **Ważne:** Prawo do edycji mają wszyscy członkowie czatu, którzy spełniają **przynajmniej jeden** z poniższych warunków:
+> **Ważne:** Prawo do edycji mają wszyscy członkowie czatu, którzy spełniają **przynajmniej jeden** z poniższych warunków:
 > - Mają rolę Opiekuna w grupie rodzinnej
 > - Są osobą, która utworzyła ten wątek czatu
 > Jeżeli nie widzisz ikony koła zębatego - nie spełniasz żadnego z powyższych warunków i nie możesz edytować tego wątku.
 
 Po kliknięciu w koło zębate zostaniemy przeniesieni do formularza analogicznego do formularza tworzenia czatu grupowego. Możemy tutaj dodać lub usunąć członków czatu, zmienić ikonę wątku oraz jego nazwę.
-> 🔒 **Ważne:** Nie możesz usunąć samego siebie.
+> **Ważne:** Nie możesz usunąć samego siebie z wątku czatu.
 
 ![Group chat edit](./img/chat_group_edit.png)
