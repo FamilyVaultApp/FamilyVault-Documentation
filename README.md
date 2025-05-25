@@ -1,15 +1,18 @@
+<img width="148" alt="icon2" src="https://github.com/user-attachments/assets/55d65d04-a448-48cd-b874-2e14ee4b69ea" />
+
 # Dokumentacja FamilyVault
+
 
 Oficjalna dokumentacja aplikacji **FamilyVault** – prywatnego komunikatora rodzinnego z szyfrowaniem end-to-end.
 
 ## O projekcie
 
 FamilyVault to bezpieczna aplikacja mobilna przeznaczona dla rodzin, oferująca:
-- 🔒 Szyfrowanie end-to-end (E2EE)
-- 💬 Bezpieczne czaty grupowe i indywidualne
-- 📋 Listy zadań dla organizacji życia rodzinnego
-- 📁 Szuflada na dokumenty i zdjęcia
-- 🏠 Możliwość własnego hostingu (PrivMX Bridge)
+- Szyfrowanie end-to-end (E2EE)
+- Bezpieczne czaty grupowe i indywidualne
+- Listy zadań dla organizacji życia rodzinnego
+- Szuflada na dokumenty i zdjęcia
+- Możliwość własnego hostingu (PrivMX Bridge)
 
 ## Instalacja
 
@@ -59,6 +62,6 @@ Ta komenda generuje statyczną zawartość do katalogu `build`, którą można s
 
 ## Linki
 
-- 🌐 [Strona projektu](https://familyvault.pl/)
-- 🐙 [Organizacja GitHub](https://github.com/FamilyVaultApp)
+- [Strona projektu](https://familyvault.pl/)
+- [Organizacja GitHub](https://github.com/FamilyVaultApp)
 
