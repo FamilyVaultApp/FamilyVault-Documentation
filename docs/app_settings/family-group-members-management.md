@@ -4,7 +4,9 @@ sidebar_position: 3
 
 # Zarządzanie grupą rodzinną
 
-> 🔒 **Ważne:** Tylko Opiekun może zarządzać grupą rodzinną.
+Dodawanie oraz modyfikacja członków grupy rodzinnej, zmiana nazwy grupy.
+
+> **Ważne:** Tylko Opiekun może zarządzać grupą rodzinną.
 
 ## Zmiana nazwy grupy rodzinnej
 
