@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+---
+
+
 # Samodzielna konfiguracja serwera FamilyVault
 
 Aby samodzielnie uruchomić backend **FamilyVault Server**, potrzebujesz lokalnie lub na serwerze skonfigurować środowisko z zależnościami:
@@ -20,13 +25,13 @@ Edytuj plik `appsettings.json` (lub `appsettings.Development.json`) i uzupełnij
 
 Serwer sam zapisze solutionId do pliku config/solution przy pierwszym uruchomieniu.
 
-W katalogu głównym uruchom zależności \
-Pamiętaj by zmienić konfiguracje w docker-compose! 
+W katalogu głównym uruchom zależności.
+> **Ważne:** Pamiętaj aby zmienić konfigurację w docker-compose! 
 ```
 docker-compose up -d 
 ```
 
-Lub bez wykorzystania Dockera
+Alternatywnie możesz uruchomić serwer bez wykorzystania Dockera:
 
 ```
 cd FamilyVaultServer
