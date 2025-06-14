@@ -1,8 +1,8 @@
 {
-  "label": "API Frontendu",
-  "position": 2,
+  "label": "Aplikacja Mobilna",
+  "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Dokumentacja API serwisów frontendowych aplikacji FamilyVault."
+    "description": "Dokumentacja API serwisów aplikacji mobilnej FamilyVault."
   }
 }
