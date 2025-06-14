@@ -4,223 +4,438 @@ sidebar_position: 1
 
 # ChatService
 
-ChatService jest głównym serwisem odpowiedzialnym za zarządzanie czatami, wątkami oraz wiadomościami w aplikacji FamilyVault.
+## Opis ogólny
 
-## Zarządzanie wątkami czatu
+`ChatService` jest głównym serwisem odpowiedzialnym za zarządzanie komunikacją w aplikacji FamilyVault. Obsługuje tworzenie i zarządzanie czatami grupowymi oraz indywidualnymi, wysyłanie różnych typów wiadomości (tekst, głos, obraz), oraz synchronizację wiadomości z bazą danych lokalnej.
 
-### createGroupChat
+## Zależności
+
+Serwis korzysta z następujących komponentów:
+- `IFamilyGroupService` - zarządzanie grupami rodzinnymi
+- `IFamilyGroupSessionService` - obsługa sesji grup rodzinnych
+- `IPrivMxClient` - komunikacja z PrivMX i operacje kryptograficzne
+- `IStoredChatMessageRepository` - lokalne przechowywanie wiadomości
+- `IImagePickerService` - przetwarzanie obrazów
+
+## Metody publiczne
+
+### Zarządzanie czatami grupowymi
+
+#### `createGroupChat`
+```kotlin
+suspend fun createGroupChat(
+    name: String,
+    members: List<FamilyMember>,
+    chatIcon: ThreadIconType
+): ChatThread
+```
+
+**Opis:** Tworzy nowy czat grupowy z określonymi członkami.
 
 **Parametry:**
-- `name: String` - nazwa grupy czatu
-- `members: List<FamilyMember>` - lista członków rodziny do dodania
-- `chatIcon: ThreadIconType` - ikona czatu
+- `name` - nazwa czatu grupowego
+- `members` - lista członków czatu
+- `chatIcon` - ikona czatu
 
-**Zwraca:** `ChatThread` - utworzony wątek czatu
+**Zwraca:** Obiekt `ChatThread` reprezentujący utworzony czat
 
-**Przykład użycia:**
+**Proces:**
+1. Dzieli członków na użytkowników i menedżerów
+2. Tworzy store dla plików czatu
+3. Tworzy wątek czatu z odpowiednimi uprawnieniami
+
+#### `updateChatThread`
 ```kotlin
-val chatThread = chatService.createGroupChat(
-    name = "Rodzinny czat",
-    members = listOf(member1, member2),
-    chatIcon = ThreadIconType.FAMILY
+suspend fun updateChatThread(
+    thread: ChatThread,
+    members: List<FamilyMember>,
+    newName: String?,
+    chatIcon: ThreadIconType?,
+    chatCreator: FamilyMember?
 )
 ```
 
-### createIndividualChat
+**Opis:** Aktualizuje istniejący wątek czatu (członkowie, nazwa, ikona).
 
 **Parametry:**
-- `firstMember: FamilyMember` - pierwszy uczestnik
-- `secondMember: FamilyMember` - drugi uczestnik
+- `thread` - czat do zaktualizowania
+- `members` - nowa lista członków
+- `newName` - nowa nazwa czatu (opcjonalna)
+- `chatIcon` - nowa ikona czatu (opcjonalna)
+- `chatCreator` - twórca czatu (opcjonalny)
 
-**Zwraca:** `Unit`
-
-### createIndividualChatsWithAllFamilyMembersForMember
-
-**Parametry:**
-- `member: FamilyMember` - członek rodziny
-
-**Zwraca:** `Unit`
-
-### updateChatThread
-
-**Parametry:**
-- `thread: ChatThread` - wątek do aktualizacji
-- `members: List<FamilyMember>` - nowa lista członków
-- `newName: String?` - nowa nazwa (opcjonalne)
-- `chatIcon: ThreadIconType?` - nowa ikona (opcjonalne)
-- `chatCreator: FamilyMember?` - twórca czatu (opcjonalne)
-
-**Zwraca:** `Unit`
-
-## Pobieranie wątków
-
-### retrieveAllChatThreads
-
-**Zwraca:** `List<ChatThread>`
-
-### retrieveAllGroupChatThreads
-
-**Zwraca:** `List<ChatThread>`
-
-### retrieveAllIndividualChatThreads
-
-**Zwraca:** `List<ChatThread>`
-
-## Wysyłanie wiadomości
-
-### sendTextMessage
-
-**Parametry:**
-- `chatThreadId: String` - ID wątku czatu
-- `messageContent: String` - treść wiadomości
-- `respondToMessageId: String` - ID wiadomości, na którą odpowiadamy
-
-**Zwraca:** `Unit`
-
-**Przykład użycia:**
+#### `retrieveAllGroupChatThreads`
 ```kotlin
-chatService.sendTextMessage(
-    chatThreadId = "thread123",
-    messageContent = "Cześć wszystkim!",
-    respondToMessageId = ""
+fun retrieveAllGroupChatThreads(): List<ChatThread>
+```
+
+**Opis:** Pobiera wszystkie czaty grupowe użytkownika.
+
+**Zwraca:** Lista czatów grupowych
+
+### Zarządzanie czatami indywidualnymi
+
+#### `createIndividualChat`
+```kotlin
+suspend fun createIndividualChat(
+    firstMember: FamilyMember,
+    secondMember: FamilyMember
 )
 ```
 
-### sendVoiceMessage
+**Opis:** Tworzy czat indywidualny między dwoma członkami rodziny.
 
 **Parametry:**
-- `chatThreadId: String` - ID wątku czatu
-- `audioData: ByteArray` - dane audio
+- `firstMember` - pierwszy członek czatu
+- `secondMember` - drugi członek czatu
 
-**Zwraca:** `Unit`
+#### `createIndividualChatsWithAllFamilyMembersForMember`
+```kotlin
+suspend fun createIndividualChatsWithAllFamilyMembersForMember(member: FamilyMember)
+```
 
-### sendImageMessage
-
-**Parametry:**
-- `chatThreadId: String` - ID wątku czatu
-- `imageByteArray: ByteArray` - dane obrazu
-
-**Zwraca:** `Unit`
-
-## Pobieranie wiadomości
-
-### retrieveMessagesFirstPage
+**Opis:** Tworzy czaty indywidualne między określonym członkiem a wszystkimi innymi członkami rodziny.
 
 **Parametry:**
-- `chatThreadId: String` - ID wątku czatu
+- `member` - członek, dla którego tworzone są czaty
 
-**Zwraca:** `List<ChatMessage>`
+#### `retrieveAllIndividualChatThreads`
+```kotlin
+fun retrieveAllIndividualChatThreads(): List<ChatThread>
+```
 
-### retrieveMessagesPage
+**Opis:** Pobiera wszystkie czaty indywidualne użytkownika.
 
-**Parametry:**
-- `chatThreadId: String` - ID wątku czatu
-- `page: Int` - numer strony
+**Zwraca:** Lista czatów indywidualnych
 
-**Zwraca:** `List<ChatMessage>`
+### Wysyłanie wiadomości
 
-### retrieveLastMessage
+#### `sendTextMessage`
+```kotlin
+fun sendTextMessage(
+    chatThreadId: String,
+    messageContent: String,
+    respondToMessageId: String
+)
+```
 
-**Parametry:**
-- `chatThreadId: String` - ID wątku czatu
-
-**Zwraca:** `ChatMessage?` - ostatnia wiadomość lub null
-
-## Pobieranie plików multimedialnych
-
-### getVoiceMessage
-
-**Parametry:**
-- `fileId: String` - ID pliku
-
-**Zwraca:** `ByteArray` - dane audio
-
-### getImageMessage
+**Opis:** Wysyła wiadomość tekstową do określonego czatu.
 
 **Parametry:**
-- `fileId: String` - ID pliku
+- `chatThreadId` - identyfikator czatu
+- `messageContent` - treść wiadomości
+- `respondToMessageId` - ID wiadomości, na którą odpowiadamy
 
-**Zwraca:** `ByteArray` - dane obrazu
+#### `sendVoiceMessage`
+```kotlin
+fun sendVoiceMessage(
+    chatThreadId: String,
+    audioData: ByteArray
+)
+```
 
-### getImageBitmap
-
-**Parametry:**
-- `chatMessage: String` - ID wiadomości
-
-**Zwraca:** `ImageBitmap?` - bitmap obrazu lub null
-
-## Zarządzanie uprawnieniami
-
-### retrievePublicKeysOfChatThreadManagers
-
-**Parametry:**
-- `threadId: String` - ID wątku
-
-**Zwraca:** `List<String>` - lista kluczy publicznych
-
-### retrieveChatThreadInitialManagers
+**Opis:** Wysyła wiadomość głosową do czatu.
 
 **Parametry:**
-- `threadId: String` - ID wątku
+- `chatThreadId` - identyfikator czatu
+- `audioData` - dane audio w formacie ByteArray
 
-**Zwraca:** `List<String>` - lista kluczy publicznych
+**Proces:**
+1. Pobiera ID store'a dla plików czatu
+2. Zapisuje plik audio w store
+3. Wysyła wiadomość z referencją do pliku
 
-### updateGroupChatThreadsAfterUserPermissionChange
+#### `sendImageMessage`
+```kotlin
+fun sendImageMessage(
+    chatThreadId: String,
+    imageByteArray: ByteArray
+)
+```
 
-Aktualizuje grupowe wątki czatu po zmianie uprawnień użytkownika.
-
-**Parametry:**
-- `updatedUser: FamilyMember` - użytkownik ze zmienionymi uprawnieniami
-- `familyMembers: List<FamilyMember>` - lista członków rodziny
-
-**Zwraca:** `Unit`
-
-## Zarządzanie bazą danych
-
-### populateDatabaseWithLastMessages
-
-Wypełnia lokalną bazę danych najnowszymi wiadomościami z serwera.
+**Opis:** Wysyła wiadomość z obrazem do czatu.
 
 **Parametry:**
-- `chatThreadId: String` - ID wątku czatu
+- `chatThreadId` - identyfikator czatu
+- `imageByteArray` - dane obrazu w formacie ByteArray
 
-**Zwraca:** `Unit`
+**Proces:**
+1. Kompresuje i obraca obraz
+2. Zapisuje obraz w store
+3. Tworzy metadane obrazu (wymiary, ID pliku)
+4. Wysyła wiadomość z metadanymi obrazu
 
-## Typy wyliczeniowe
+### Pobieranie wiadomości
+
+#### `retrieveMessagesFirstPage`
+```kotlin
+suspend fun retrieveMessagesFirstPage(chatThreadId: String): List<ChatMessage>
+```
+
+**Opis:** Pobiera pierwszą stronę wiadomości z określonego czatu.
+
+**Parametry:**
+- `chatThreadId` - identyfikator czatu
+
+**Zwraca:** Lista wiadomości z pierwszej strony
+
+#### `retrieveMessagesPage`
+```kotlin
+suspend fun retrieveMessagesPage(chatThreadId: String, page: Int): List<ChatMessage>
+```
+
+**Opis:** Pobiera określoną stronę wiadomości z czatu.
+
+**Parametry:**
+- `chatThreadId` - identyfikator czatu
+- `page` - numer strony (0-indexed)
+
+**Zwraca:** Lista wiadomości z określonej strony
+
+#### `getVoiceMessage`
+```kotlin
+fun getVoiceMessage(fileId: String): ByteArray
+```
+
+**Opis:** Pobiera dane wiadomości głosowej na podstawie ID pliku.
+
+**Parametry:**
+- `fileId` - identyfikator pliku audio
+
+**Zwraca:** Dane audio w formacie ByteArray
+
+#### `getImageMessage`
+```kotlin
+fun getImageMessage(fileId: String): ByteArray
+```
+
+**Opis:** Pobiera dane obrazu na podstawie ID pliku.
+
+**Parametry:**
+- `fileId` - identyfikator pliku obrazu
+
+**Zwraca:** Dane obrazu w formacie ByteArray
+
+#### `getImageBitmap`
+```kotlin
+fun getImageBitmap(chatMessage: String): ImageBitmap?
+```
+
+**Opis:** Konwertuje dane wiadomości na obiekt ImageBitmap do wyświetlenia.
+
+**Parametry:**
+- `chatMessage` - ID pliku obrazu
+
+**Zwraca:** Obiekt ImageBitmap lub null w przypadku błędu
+
+### Zarządzanie czatami
+
+#### `retrieveAllChatThreads`
+```kotlin
+fun retrieveAllChatThreads(): List<ChatThread>
+```
+
+**Opis:** Pobiera wszystkie czaty użytkownika (grupowe i indywidualne).
+
+**Zwraca:** Lista wszystkich czatów
+
+#### `retrieveLastMessage`
+```kotlin
+fun retrieveLastMessage(chatThreadId: String): ChatMessage?
+```
+
+**Opis:** Pobiera ostatnią wiadomość z określonego czatu.
+
+**Parametry:**
+- `chatThreadId` - identyfikator czatu
+
+**Zwraca:** Ostatnia wiadomość lub null jeśli czat jest pusty
+
+### Synchronizacja i zarządzanie danymi
+
+#### `populateDatabaseWithLastMessages`
+```kotlin
+suspend fun populateDatabaseWithLastMessages(chatThreadId: String)
+```
+
+**Opis:** Synchronizuje wiadomości z serwera do lokalnej bazy danych.
+
+**Parametry:**
+- `chatThreadId` - identyfikator czatu do synchronizacji
+
+**Proces:**
+1. Pobiera wiadomości strona po stronie
+2. Sprawdza czy wiadomość już istnieje lokalnie
+3. Dodaje nowe wiadomości do bazy danych
+4. Kończy gdy napotka istniejącą wiadomość
+
+#### `updateGroupChatThreadsAfterUserPermissionChange`
+```kotlin
+suspend fun updateGroupChatThreadsAfterUserPermissionChange(
+    updatedUser: FamilyMember,
+    familyMembers: List<FamilyMember>
+)
+```
+
+**Opis:** Aktualizuje czaty grupowe po zmianie uprawnień użytkownika.
+
+**Parametry:**
+- `updatedUser` - użytkownik o zmienionych uprawnieniach
+- `familyMembers` - lista wszystkich członków rodziny
+
+### Zarządzanie uprawnieniami
+
+#### `retrievePublicKeysOfChatThreadManagers`
+```kotlin
+suspend fun retrievePublicKeysOfChatThreadManagers(threadId: String): List<String>
+```
+
+**Opis:** Pobiera klucze publiczne menedżerów określonego czatu.
+
+**Parametry:**
+- `threadId` - identyfikator wątku czatu
+
+**Zwraca:** Lista kluczy publicznych menedżerów
+
+#### `retrieveChatThreadInitialManagers`
+```kotlin
+suspend fun retrieveChatThreadInitialManagers(threadId: String): List<String>
+```
+
+**Opis:** Pobiera klucze publiczne początkowych menedżerów czatu.
+
+**Parametry:**
+- `threadId` - identyfikator wątku czatu
+
+**Zwraca:** Lista kluczy publicznych początkowych menedżerów
+
+## Typy danych
 
 ### ChatMessageContentType
-- `TEXT` - wiadomość tekstowa
-- `VOICE` - wiadomość głosowa
-- `IMAGE` - wiadomość ze zdjęciem
+```kotlin
+enum class ChatMessageContentType {
+    TEXT,    // Wiadomość tekstowa
+    VOICE,   // Wiadomość głosowa
+    IMAGE    // Wiadomość ze zdjęciem
+}
+```
 
 ### ChatThreadType
-- `GROUP` - czat grupowy
-- `INDIVIDUAL` - czat indywidualny
+```kotlin
+enum class ChatThreadType {
+    GROUP,       // Czat grupowy
+    INDIVIDUAL   // Czat indywidualny
+}
+```
 
 ### ThreadIconType
-Dostępne ikony wątków czatu (szczegóły w dokumentacji modeli).
-
-## Modele danych
+Dostępne ikony wątków czatu reprezentowane jako enum z różnymi opcjami graficznymi.
 
 ### ChatThread
-Reprezentuje wątek czatu z następującymi właściwościami:
-- `id: String` - unikalny identyfikator
-- `name: String` - nazwa wątku
-- `participantsIds: List<String>` - lista ID uczestników
-- `lastMessage: ChatMessage?` - ostatnia wiadomość
-- `type: ChatThreadType` - typ wątku
-- `referenceStoreId: String?` - ID referencyjnego store'a
-- `iconType: ThreadIconType` - typ ikony
+```kotlin
+data class ChatThread(
+    val id: String,                      // Unikalny identyfikator
+    val name: String,                    // Nazwa wątku
+    val participantsIds: List<String>,   // Lista ID uczestników
+    val lastMessage: ChatMessage?,       // Ostatnia wiadomość
+    val type: ChatThreadType,            // Typ wątku
+    val referenceStoreId: String?,       // ID referencyjnego store'a
+    val iconType: ThreadIconType         // Typ ikony
+)
+```
 
 ### ChatMessage
-Reprezentuje wiadomość w czacie z metadanymi takimi jak ID, treść, typ zawartości, data wysłania i informacje o nadawcy.
+```kotlin
+data class ChatMessage(
+    val id: String,                          // Unikalny identyfikator
+    val threadId: String,                    // ID wątku czatu
+    val content: String,                     // Treść wiadomości
+    val contentType: ChatMessageContentType, // Typ zawartości
+    val authorPublicKey: String,             // Klucz publiczny autora
+    val timestamp: LocalDateTime,            // Data i czas wysłania
+    val respondToMessageId: String?          // ID wiadomości, na którą odpowiada
+)
+```
 
 ## Obsługa błędów
 
-Wszystkie metody mogą rzucić wyjątki związane z:
-- Problemami z połączeniem sieciowym
-- Błędami autoryzacji
-- Nieprawidłowymi parametrami
-- Błędami szyfrowania/deszyfrowania
+Serwis może zgłaszać następujące wyjątki:
 
-Zaleca się odpowiednie obsłużenie wyjątków w warstwie UI.
+- `ChatThreadNotFoundException` - wątek czatu nie został znaleziony
+- `InsufficientPermissionsException` - brak uprawnień do operacji
+- `MessageNotFoundException` - wiadomość nie została znaleziona
+- `FileNotFoundException` - plik multimedialny nie został znaleziony
+- `NetworkException` - problemy z połączeniem sieciowym
+- `CryptographyException` - błędy szyfrowania/deszyfrowania
+- `ImageProcessingException` - błędy przetwarzania obrazów
+
+## Przykłady użycia
+
+### Tworzenie czatu grupowego
+```kotlin
+try {
+    val chatThread = chatService.createGroupChat(
+        name = "Rodzinny czat",
+        members = familyMembers,
+        chatIcon = ThreadIconType.FAMILY
+    )
+    // Czat został utworzony pomyślnie
+} catch (e: Exception) {
+    // Obsłuż błąd tworzenia czatu
+}
+```
+
+### Wysyłanie wiadomości tekstowej
+```kotlin
+chatService.sendTextMessage(
+    chatThreadId = "thread_123",
+    messageContent = "Cześć wszystkim!",
+    respondToMessageId = "" // Brak odpowiedzi na konkretną wiadomość
+)
+```
+
+### Pobieranie wiadomości z paginacją
+```kotlin
+// Pierwsza strona wiadomości
+val firstPage = chatService.retrieveMessagesFirstPage("thread_123")
+
+// Kolejne strony
+val secondPage = chatService.retrieveMessagesPage("thread_123", 1)
+val thirdPage = chatService.retrieveMessagesPage("thread_123", 2)
+```
+
+### Wysyłanie wiadomości głosowej
+```kotlin
+val audioData = recordAudio() // Implementacja nagrywania
+chatService.sendVoiceMessage(
+    chatThreadId = "thread_123",
+    audioData = audioData
+)
+```
+
+### Pobieranie obrazu z wiadomości
+```kotlin
+val imageData = chatService.getImageMessage("file_456")
+val bitmap = chatService.getImageBitmap("file_456")
+```
+
+## Uwagi implementacyjne
+
+- Obsługuje trzy typy wiadomości: tekstowe, głosowe i obrazowe
+- Automatycznie kompresuje i obraca obrazy przed wysłaniem
+- Używa paginacji do efektywnego ładowania wiadomości
+- Synchronizuje dane z lokalną bazą danych dla offline'owego dostępu
+- Automatycznie zarządza uprawnieniami w czatach na podstawie ról w grupie rodzinnej
+- Obsługuje zarówno czaty grupowe jak i indywidualne
+- Używa szyfrowania end-to-end dla bezpieczeństwa komunikacji
+- Wszystkie operacje asynchroniczne używają `suspend`
+- Pliki multimedialne są przechowywane w dedykowanych store'ach
+- Lokalna baza danych cache'uje wiadomości dla lepszej wydajności
+
+## Bezpieczeństwo
+
+- Wszystkie wiadomości są szyfrowane end-to-end
+- Klucze szyfrowania są zarządzane automatycznie przez PrivMX
+- Pliki multimedialne są szyfrowane przed zapisaniem
+- Uprawnienia w czatach są synchronizowane z rolami w grupie rodzinnej
+- Dane lokalne są zabezpieczone szyfrowaniem urządzenia
