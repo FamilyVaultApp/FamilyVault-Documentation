@@ -1,6 +1,4 @@
-# JoinStatusService - Dokumentacja
-
-## Opis
+# JoinStatusService
 
 `JoinStatusService` to serwis odpowiedzialny za zarządzanie statusami dołączania członków do grupy rodzinnej. Implementuje interfejs `IJoinStatusService` i służy do śledzenia procesu dołączania nowych użytkowników.
 

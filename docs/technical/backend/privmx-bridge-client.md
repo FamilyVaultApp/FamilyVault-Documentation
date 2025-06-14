@@ -1,6 +1,4 @@
-# PrivMxBridgeClient - Dokumentacja
-
-## Opis
+# PrivMxBridgeClient
 
 `PrivMxBridgeClient` to klient HTTP odpowiedzialny za komunikację z zewnętrznym API PrivMX Bridge. Implementuje interfejs `IPrivMxBridgeClient` i służy do wykonywania zapytań RPC do serwera PrivMX Bridge.
 

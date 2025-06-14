@@ -1,6 +1,4 @@
-# PrivMxSolutionProvider - Dokumentacja
-
-## Opis
+# PrivMxSolutionProvider
 
 `PrivMxSolutionProvider` to serwis odpowiedzialny za zarządzanie identyfikatorem rozwiązania PrivMX. Implementuje interfejs `IPrivMxSolutionProvider` i zapewnia mechanizm pobierania lub tworzenia identyfikatora rozwiązania z obsługą persystencji lokalnej.
 

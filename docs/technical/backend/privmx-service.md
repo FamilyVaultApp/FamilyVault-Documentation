@@ -1,6 +1,4 @@
-# PrivMxService - Dokumentacja
-
-## Opis
+# PrivMxService
 
 `PrivMxService` to główny serwis odpowiedzialny za komunikację z platformą PrivMX Bridge. Implementuje interfejs `IPrivMxService` i zarządza operacjami związanymi z kontekstami, użytkownikami oraz rozwiązaniami w systemie PrivMX.
 
