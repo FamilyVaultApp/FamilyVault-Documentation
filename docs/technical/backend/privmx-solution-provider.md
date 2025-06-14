@@ -2,41 +2,23 @@
 
 `PrivMxSolutionProvider` to serwis odpowiedzialny za zarządzanie identyfikatorem rozwiązania PrivMX. Implementuje interfejs `IPrivMxSolutionProvider` i zapewnia mechanizm pobierania lub tworzenia identyfikatora rozwiązania z obsługą persystencji lokalnej.
 
-## Przestrzeń nazw
-
-```csharp
-FamilyVaultServer.Services.PrivMx
-```
-
-## Implementacja interfejsu
-
-Implementuje `IPrivMxSolutionProvider`
-
 ## Pola prywatne
 
 ### `_privMxService`
 ```csharp
 private IPrivMxService _privMxService;
 ```
-Instancja serwisu PrivMX używana do tworzenia nowych rozwiązań.
 
 ### `_solutionName`
 ```csharp
 private string _solutionName;
 ```
-Nazwa rozwiązania używana podczas tworzenia nowego rozwiązania.
 
 ## Konstruktor
 
 ```csharp
 public PrivMxSolutionProvider(IPrivMxService privMxService, string solutionName)
 ```
-
-**Parametry:**
-- `privMxService` - serwis PrivMX implementujący `IPrivMxService`
-- `solutionName` - nazwa rozwiązania
-
-**Opis:** Konstruktor wykorzystuje primary constructor syntax z C# 12 do inicjalizacji pól prywatnych.
 
 ## Metody publiczne
 

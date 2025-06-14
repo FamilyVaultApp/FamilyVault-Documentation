@@ -2,38 +2,23 @@
 
 `PrivMxBridgeClient` to klient HTTP odpowiedzialny za komunikację z zewnętrznym API PrivMX Bridge. Implementuje interfejs `IPrivMxBridgeClient` i służy do wykonywania zapytań RPC do serwera PrivMX Bridge.
 
-## Przestrzeń nazw
-
-```csharp
-FamilyVaultServer.Services.PrivMx
-```
-
-## Implementacja interfejsu
-
-Implementuje `IPrivMxBridgeClient`
-
 ## Pola prywatne
 
 ### `_httpClient`
 ```csharp
 private readonly HttpClient _httpClient;
 ```
-Klient HTTP skonfigurowany do komunikacji z PrivMX Bridge API.
 
 ### `_options`
 ```csharp
 private readonly PrivMxOptions _options;
 ```
-Opcje konfiguracyjne zawierające dane do połączenia z PrivMX Bridge.
 
 ## Konstruktor
 
 ```csharp
 public PrivMxBridgeClient(PrivMxOptions options)
 ```
-
-**Parametry:**
-- `options` - opcje konfiguracyjne typu `PrivMxOptions`
 
 **Działanie:**
 1. Zapisuje opcje konfiguracyjne
@@ -47,14 +32,8 @@ public async Task<bool> ExecuteMethodWithOperationStatus<TRequestParameters>(str
     where TRequestParameters : PrivMxRequestParameters
 ```
 
-**Parametry:**
-- `methodName` - nazwa metody RPC do wywołania
-- `parameters` - parametry zapytania dziedziczące po `PrivMxRequestParameters`
-
 **Zwraca:**
 - `Task<bool>` - `true` jeśli operacja zakończyła się sukcesem (`"OK"`), `false` w przeciwnym przypadku
-
-**Opis:** Wykonuje zapytanie RPC i sprawdza status operacji na podstawie odpowiedzi tekstowej.
 
 ### `ExecuteMethodWithResponse<TRequestParameters, TResponseResult>(string methodName, TRequestParameters parameters)`
 ```csharp
@@ -62,18 +41,6 @@ public async Task<TResponseResult> ExecuteMethodWithResponse<TRequestParameters,
     where TRequestParameters : PrivMxRequestParameters
     where TResponseResult : PrivMxResponseResult
 ```
-
-**Parametry:**
-- `methodName` - nazwa metody RPC do wywołania
-- `parameters` - parametry zapytania dziedziczące po `PrivMxRequestParameters`
-
-**Typ generyczny:**
-- `TResponseResult` - typ odpowiedzi dziedziczący po `PrivMxResponseResult`
-
-**Zwraca:**
-- `Task<TResponseResult>` - odpowiedź w określonym typie
-
-**Opis:** Wykonuje zapytanie RPC i deserializuje odpowiedź do określonego typu.
 
 ## Metody prywatne
 
@@ -107,9 +74,6 @@ private async Task<Stream> SendRequestAndGetResponseStream<TRequestParameters>(P
 private HttpClient InitializeHttpClient()
 ```
 
-**Zwraca:**
-- `HttpClient` - skonfigurowany klient HTTP
-
 **Działanie:**
 1. Tworzy nowy `HttpClient`
 2. Ustawia nagłówek autoryzacji Basic Auth poprzez `GetAuthorizationHeader()`
@@ -119,9 +83,6 @@ private HttpClient InitializeHttpClient()
 ```csharp
 private string GetAuthorizationHeader()
 ```
-
-**Zwraca:**
-- `string` - zakodowany nagłówek autoryzacji Base64
 
 **Działanie:**
 1. Pobiera `ApiKeyId` i `ApiKeySecret` z opcji
@@ -146,6 +107,36 @@ Klient rzuca wyjątek `PrivMxBridgeException` w następujących przypadkach:
 3. **Błąd HTTP:**
    ```
    Error while sending request to PrivMX Bridge: {statusCode}
+   ```
+
+## Konfiguracja JSON
+
+Klient używa następujących opcji serializacji:
+- `DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull` - ignoruje pola z wartością `null`
+
+## Autoryzacja
+
+Używa autoryzacji **Basic Auth** z danymi:
+- Nazwa użytkownika: `ApiKeyId` z `PrivMxOptions`
+- Hasło: `ApiKeySecret` z `PrivMxOptions`
+
+## Endpoint
+
+Wszystkie zapytania są wysyłane na endpoint:
+```
+{BaseUrl}/api
+```
+
+gdzie `BaseUrl` pochodzi z pola `Url` w `PrivMxOptions`.
+
+## Wykorzystywane modele
+
+### Zapytania:
+- `PrivMxRequest<T>` - struktura zapytania RPC
+
+### Odpowiedzi:
+- `PrivMxResponse<T>` - struktura odpowiedzi RPC
+- `PrivMxResponseError` - informacje o błędach
    ```
 
 ## Konfiguracja JSON
