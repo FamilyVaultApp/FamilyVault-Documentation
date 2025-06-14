@@ -4,7 +4,6 @@ sidebar_position: 2
 
 # FamilyGroupService
 
-## Opis ogólny
 
 `FamilyGroupService` jest głównym serwisem odpowiedzialnym za zarządzanie grupami rodzinnymi w aplikacji FamilyVault. Obsługuje tworzenie nowych grup rodzinnych, dołączanie do istniejących grup, zarządzanie członkami oraz podstawowe operacje związane z sesjami grup rodzinnych.
 

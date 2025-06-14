@@ -4,7 +4,6 @@ sidebar_position: 7
 
 # JoinStatusService
 
-## Opis ogólny
 
 `JoinStatusService` jest serwisem odpowiedzialnym za zarządzanie statusem dołączania do grup rodzinnych w aplikacji FamilyVault. Obsługuje proces generowania tokenów dołączania, monitorowania statusu oraz aktualizowania stanu procesu dołączania nowych członków do grup rodzinnych.
 
@@ -153,9 +152,3 @@ Serwis używa `AppConfig.BACKEND_REQUEST_INTERVAL_LENGTH_MS` do określenia inte
 - Serwis nie obsługuje timeout'ów - może działać w nieskończoność
 - Komunikacja odbywa się wyłącznie przez backend FamilyVault
 - Metoda `changeStateToPending()` ma mylącą nazwę - faktycznie ustawia status na `Success`
-
-## Bezpieczeństwo
-
-- Operacje wymagają ważnego tokenu dołączania
-- Backend waliduje uprawnienia do operacji na tokenach
-- Wszystkie zmiany statusu są autoryzowane przez backend

@@ -4,8 +4,6 @@ sidebar_position: 10
 
 # AudioPlayerService
 
-## Opis ogólny
-
 `AudioPlayerService` jest serwisem odpowiedzialnym za odtwarzanie nagrań audio w aplikacji FamilyVault. Umożliwia odtwarzanie danych audio w formacie PCM 16-bit oraz zarządzanie stanem odtwarzania z obsługą callback'ów po zakończeniu.
 
 **Uwaga:** Aktualnie serwis jest dostępny tylko na platformie Android.
@@ -93,13 +91,6 @@ Serwis wykorzystuje następujące konfiguracje z `AppConfig`:
 - **Zarządzanie pamięcią:** Automatyczne zwalnianie zasobów po zakończeniu
 - **Thread-safe:** Bezpieczne wywołania z różnych wątków dzięki coroutines
 - **Przerywanie:** Nowe odtwarzanie automatycznie przerywa poprzednie
-
-## Integracja z aplikacją
-
-Serwis jest używany głównie do:
-- Odtwarzania wiadomości głosowych w czatach
-- Podglądu nagrań audio przed wysłaniem
-- Odtwarzania plików audio z szafy plików
 
 ## Ograniczenia platformowe
 

@@ -4,7 +4,6 @@ sidebar_position: 15
 
 # NfcService
 
-## Opis ogólny
 
 `NfcService` jest serwisem odpowiedzialnym za zarządzanie komunikacją NFC (Near Field Communication) w aplikacji FamilyVault. Umożliwia czytanie danych z tagów NFC oraz emulowanie tagów do udostępniania danych członkom rodziny. Obsługuje zarówno tryb odczytu jak i emulacji NFC.
 
@@ -148,13 +147,6 @@ Serwis współpracuje z `HostApduService` do emulacji kart NFC:
 - Przekazuje dane przez Intent extras
 - Używa tego samego AID dla konsystentności
 - Automatycznie zarządza lifecycle usługi
-
-## Bezpieczeństwo
-
-- Dane są szyfrowane przez `PayloadEncryptor`/`PayloadDecryptor`
-- Używa tego samego AID co `HostApduService`
-- Walidacja statusów odpowiedzi IsoDep
-- Bezpieczne parsowanie danych NDEF
 
 ## Ograniczenia platformowe
 

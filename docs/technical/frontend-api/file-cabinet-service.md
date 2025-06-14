@@ -4,7 +4,6 @@ sidebar_position: 6
 
 # FileCabinetService
 
-## Opis ogólny
 
 `FileCabinetService` jest serwisem odpowiedzialnym za zarządzanie szafą plików (File Cabinet) w aplikacji FamilyVault. Obsługuje dwa główne typy przechowywania plików: galerię obrazów oraz dokumenty. Umożliwia tworzenie, przesyłanie, pobieranie plików oraz zarządzanie uprawnieniami dostępu do zasobów szafy plików.
 
@@ -177,10 +176,3 @@ data class FileCabinetDocument(
 - Automatycznie zarządza uprawnieniami na podstawie ról w grupie rodzinnej
 - Store'y są tworzone z odpowiednimi uprawnieniami dla użytkowników i menedżerów
 - Wszystkie pliki są szyfrowane end-to-end przez PrivMX
-
-## Bezpieczeństwo
-
-- Pliki są automatycznie szyfrowane przez PrivMX
-- Uprawnienia są zarządzane na poziomie store'a
-- Członkowie mają dostęp według swojej roli w grupie rodzinnej
-- Operacje wymagają aktywnej sesji grupy rodzinnej

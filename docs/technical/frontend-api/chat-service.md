@@ -4,7 +4,6 @@ sidebar_position: 1
 
 # ChatService
 
-## Opis ogólny
 
 `ChatService` jest głównym serwisem odpowiedzialnym za zarządzanie komunikacją w aplikacji FamilyVault. Obsługuje tworzenie i zarządzanie czatami grupowymi oraz indywidualnymi, wysyłanie różnych typów wiadomości (tekst, głos, obraz), oraz synchronizację wiadomości z bazą danych lokalnej.
 
@@ -431,11 +430,3 @@ val bitmap = chatService.getImageBitmap("file_456")
 - Wszystkie operacje asynchroniczne używają `suspend`
 - Pliki multimedialne są przechowywane w dedykowanych store'ach
 - Lokalna baza danych cache'uje wiadomości dla lepszej wydajności
-
-## Bezpieczeństwo
-
-- Wszystkie wiadomości są szyfrowane end-to-end
-- Klucze szyfrowania są zarządzane automatycznie przez PrivMX
-- Pliki multimedialne są szyfrowane przed zapisaniem
-- Uprawnienia w czatach są synchronizowane z rolami w grupie rodzinnej
-- Dane lokalne są zabezpieczone szyfrowaniem urządzenia

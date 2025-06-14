@@ -4,7 +4,6 @@ sidebar_position: 14
 
 # ImagePickerService
 
-## Opis ogólny
 
 `ImagePickerService` jest serwisem odpowiedzialnym za zarządzanie procesem wybierania, przetwarzania i zarządzania obrazami w aplikacji FamilyVault. Umożliwia otwieranie systemowego selektora obrazów, kompresję, rotację oraz konwersję obrazów do różnych formatów.
 
@@ -223,20 +222,6 @@ private fun fixImageRotation(imageBytes: ByteArray): Bitmap
 - **Domyślna jakość kompresji:** `AppConfig.DEFAULT_COMPRESSION_QUALITY`
 - **Format wyjściowy:** JPEG dla kompresji
 - **Selektor:** Tylko obrazy (`ImageOnly`)
-
-## Obsługa błędów
-
-- Wszystkie metody używają bezpiecznego mapowania z `mapNotNull`
-- Graceful handling błędów w `fixImageRotation` - zwraca oryginalny bitmap
-- Automatyczne pomijanie nieprawidłowych URI podczas konwersji
-
-## Integracja z aplikacją
-
-Serwis jest używany głównie do:
-- Wybierania obrazów do galerii szafy plików
-- Wysyłania obrazów w czatach
-- Przetwarzania zdjęć przed przesłaniem
-- Generowania miniatur i podglądów
 
 ## Ograniczenia platformowe
 

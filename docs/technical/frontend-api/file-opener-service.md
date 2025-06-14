@@ -4,7 +4,6 @@ sidebar_position: 13
 
 # FileOpenerService
 
-## Opis ogólny
 
 `FileOpenerService` jest serwisem odpowiedzialnym za otwieranie i pobieranie plików w aplikacji FamilyVault. Umożliwia otwieranie plików w zewnętrznych aplikacjach oraz pobieranie plików do folderu Downloads na urządzeniu.
 

@@ -4,7 +4,6 @@ sidebar_position: 8
 
 # SavedFamilyGroupsService
 
-## Opis ogólny
 
 `SavedFamilyGroupsService` jest serwisem odpowiedzialnym za zarządzanie zapisanymi poświadczeniami grup rodzinnych w aplikacji FamilyVault. Umożliwia pobieranie listy wszystkich zapisanych grup, zarządzanie konkretnymi poświadczeniami oraz zmienianie ustawień domyślnych grup.
 
@@ -107,17 +106,3 @@ Serwis używa `FamilyGroupCredentialToFamilyGroupMapper` do konwersji szczegół
 - Nie zawiera logiki biznesowej - deleguje wszystkie operacje do repozytorium
 - Obsługuje mapowanie typów danych między warstwą danych a warstwą prezentacji
 - Nie wykonuje walidacji danych - zakłada poprawność parametrów wejściowych
-
-## Bezpieczeństwo
-
-- Poświadczenia są przechowywane lokalnie w zaszyfrowanej formie przez repozytorium
-- Serwis nie modyfikuje ani nie eksponuje wrażliwych danych szyfrowania
-- Identyfikacja grup odbywa się przez kombinację `contextId` i `memberPublicKey`
-
-## Zastosowanie
-
-Ten serwis jest używany głównie w:
-- Ekranach wyboru grupy rodzinnej
-- Zarządzaniu wieloma grupami rodzinnymi
-- Ustawieniach aplikacji do zmiany domyślnej grupy
-- Synchronizacji nazw grup między serwerem a lokalną bazą danych

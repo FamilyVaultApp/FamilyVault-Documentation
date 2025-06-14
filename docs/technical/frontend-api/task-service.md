@@ -4,7 +4,6 @@ sidebar_position: 9
 
 # TaskService
 
-## Opis ogólny
 
 `TaskService` jest serwisem odpowiedzialnym za zarządzanie zadaniami i listami zadań w aplikacji FamilyVault. Obsługuje tworzenie, aktualizowanie i usuwanie list zadań oraz zarządzanie poszczególnymi zadaniami w obrębie tych list. Wykorzystuje system wątków (threads) PrivMX do przechowywania i synchronizacji danych.
 
@@ -227,10 +226,3 @@ Obiekt reprezentujący pojedyncze zadanie (tworzony przez mapper z ThreadMessage
 - Opiekunowie grupy automatycznie otrzymują uprawnienia menedżera list zadań
 - Wszyscy członkowie mają dostęp do zadań, ale tylko menedżerowie mogą modyfikować strukturę
 - Implementacja obsługuje częściowe aktualizacje zadań (tylko zmienione pola)
-
-## Bezpieczeństwo
-
-- Uprawnienia są zarządzane na poziomie wątków PrivMX
-- Automatyczna synchronizacja uprawnień z rolami w grupie rodzinnej
-- Szyfrowanie end-to-end dla wszystkich danych zadań
-- Operacje wymagają aktywnej sesji grupy rodzinnej

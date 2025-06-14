@@ -4,7 +4,6 @@ sidebar_position: 4
 
 # FamilyMemberAdditionService
 
-## Opis ogólny
 
 `FamilyMemberAdditionService` jest serwisem odpowiedzialnym za zarządzanie procesem dodawania nowych członków do grup rodzinnych w aplikacji FamilyVault. Obsługuje dodawanie nowych użytkowników do grupy oraz wykonywanie niezbędnych operacji po dołączeniu użytkownika do grupy rodzinnej.
 
@@ -164,12 +163,3 @@ if (currentUser.role == MemberRole.Guardian) {
 - Nie obsługuje bezpośrednio walidacji uprawnień - zakłada, że użytkownik ma odpowiednie uprawnienia do wykonania operacji
 - Operacje są wykonywane transakcyjnie - jeśli jedna część się nie powiedzie, całość zostaje wycofana
 - Automatycznie aktualizuje lokalne cache po dodaniu nowego członka
-
-## Bezpieczeństwo
-
-- Operacje wymagają aktywnej sesji grupy rodzinnej
-- Tylko użytkownicy z odpowiednimi uprawnieniami mogą dodawać członków
-- Klucze publiczne są używane do zapewnienia bezpiecznej komunikacji
-- Wszystkie operacje są wykonywane z użyciem szyfrowania end-to-end
-- Walidacja tożsamości nowego członka przed dodaniem do grupy
-- Automatyczne szyfrowanie uprawnień przed wysłaniem do backendu

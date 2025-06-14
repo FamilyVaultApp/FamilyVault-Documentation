@@ -4,7 +4,6 @@ sidebar_position: 5
 
 # FamilyMemberPermissionGroupService
 
-## Opis ogólny
 
 `FamilyMemberPermissionGroupService` jest serwisem odpowiedzialnym za zarządzanie grupami uprawnień członków rodziny w aplikacji FamilyVault. Umożliwia zmianę poziomu uprawnień użytkowników w grupie rodzinnej, na przykład przyznanie lub odebranie uprawnień opiekuna (Guardian).
 
@@ -56,13 +55,6 @@ data class ChangeFamilyMemberPermissionGroupRequest(
 - **Kontekst:** Operacja jest wykonywana w kontekście aktualnej sesji grupy rodzinnej
 - **Asynchroniczność:** Operacja jest asynchroniczna i wymaga połączenia z backendem
 
-## Zastosowanie
-
-Ten serwis jest używany gdy:
-- Opiekun chce nadać uprawnienia Guardian nowemu członkowi rodziny
-- Opiekun chce odebrać uprawnienia Guardian innemu członkowi
-- Administratorzy chcą zarządzać hierarchią uprawnień w grupie
-
 ## Uwagi implementacyjne
 
 - Serwis jest bardzo prosty i działa jako fasada dla wywołania API backendu
@@ -70,9 +62,3 @@ Ten serwis jest używany gdy:
 - Wszystkie sprawdzenia uprawnień są wykonywane po stronie backendu
 - Operacja wymaga aktywnej sesji grupy rodzinnej
 - Nie obsługuje bezpośrednio efektów ubocznych zmiany uprawnień (np. aktualizacji czatów)
-
-## Bezpieczeństwo
-
-- Operacje są autoryzowane przez backend na podstawie aktualnej sesji
-- Identyfikator kontekstu jest automatycznie pobierany z bezpiecznej sesji
-- Wszystkie zmiany uprawnień są logowane i audytowane przez backend

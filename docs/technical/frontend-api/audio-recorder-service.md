@@ -4,7 +4,6 @@ sidebar_position: 11
 
 # AudioRecorderService
 
-## Opis ogólny
 
 `AudioRecorderService` jest serwisem odpowiedzialnym za nagrywanie audio w aplikacji FamilyVault. Umożliwia rozpoczynanie i zatrzymywanie nagrywania dźwięku z mikrofonu oraz zarządzanie uprawnieniami do nagrywania.
 
@@ -120,11 +119,6 @@ fun haveRecordingPermission(): Boolean
 - Brak uprawnień powoduje ciche zakończenie operacji `start()`
 - Wywoływanie `stop()` bez aktywnego nagrywania zwraca pustą tablicę
 
-## Integracja z aplikacją
-
-Serwis jest używany głównie do:
-- Nagrywania wiadomości głosowych w czatach
-- Tworzenia nagrań audio do przechowywania w szafie plików
 
 ## Ograniczenia platformowe
 

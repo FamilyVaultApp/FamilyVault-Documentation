@@ -4,7 +4,6 @@ sidebar_position: 12
 
 # DocumentPickerService
 
-## Opis ogólny
 
 `DocumentPickerService` jest serwisem odpowiedzialnym za zarządzanie procesem wybierania dokumentów w aplikacji FamilyVault. Umożliwia otwieranie systemowego selektora dokumentów, pobieranie wybranych plików oraz generowanie podglądów PDF. 
 
@@ -196,13 +195,6 @@ fun removeSelectedDocument(uri: String)
 - Wszystkie metody używają try-catch i zwracają null/pustą listę w przypadku błędów
 - Szczegółowe logowanie błędów z tagiem "DocumentPickerService"
 - Graceful handling braku inicjalizacji serwisu
-
-## Integracja z aplikacją
-
-Serwis jest używany głównie do:
-- Wybierania dokumentów do przesłania do szafy plików
-- Generowania podglądów PDF przed przesłaniem
-- Pobierania metadanych wybranych plików
 
 ## Ograniczenia platformowe
 

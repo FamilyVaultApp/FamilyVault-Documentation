@@ -4,8 +4,6 @@ sidebar_position: 3
 
 # FamilyGroupSessionService
 
-## Opis ogólny
-
 `FamilyGroupSessionService` jest kluczowym serwisem odpowiedzialnym za zarządzanie sesjami grup rodzinnych w aplikacji FamilyVault. Obsługuje tworzenie i utrzymywanie połączeń z grupami rodzinnymi, zarządzanie danymi sesji użytkownika oraz przechowywanie informacji o aktualnie zalogowanym użytkowniku.
 
 ## Zależności
@@ -297,14 +295,14 @@ val isAssigned = familyGroupSessionService.isSessionAssigned() // false
 - Automatyczna detekcja i obsługa self-hosted instancji
 - Bezpieczne przechowywanie odszyfrowanych kluczy tylko w pamięci
 
-## Bezpieczeństwo
+## Cykl życia sesji
 
-- Klucze prywatne są deszyfrowane tylko w pamięci
-- Automatyczne czyszczenie danych sesji przy rozłączeniu
-- Obsługa błędów związanych z usunięciem użytkownika z grupy
-- Bezpieczne zarządzanie połączeniami PrivMX
-- Walidacja stanu sesji przed każdą operacją
+1. **Przypisanie** - `assignSession()` z poświadczeniami lub parametrami
+2. **Połączenie** - `connect()` nawiązuje połączenie i pobiera dane użytkownika
+3. **Użytkowanie** - dostęp do danych przez gettery
+4. **Rozłączenie** - `disconnect()` czyści wszystkie dane
 
+Każdy krok wymaga pomyślnego wykonania poprzedniego kroku.
 ## Cykl życia sesji
 
 1. **Przypisanie** - `assignSession()` z poświadczeniami lub parametrami

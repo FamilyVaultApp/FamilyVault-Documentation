@@ -4,7 +4,6 @@ sidebar_position: 16
 
 # NotificationService
 
-## Opis ogólny
 
 `NotificationService` jest serwisem odpowiedzialnym za zarządzanie powiadomieniami push w aplikacji FamilyVault. Umożliwia tworzenie kanałów powiadomień, wysyłanie powiadomień oraz zarządzanie uprawnieniami do wyświetlania powiadomień.
 
@@ -128,12 +127,6 @@ Serwis używa następujących stałych z `AppConfig`:
 - Graceful handling - nie żąda uprawnień na starszych wersjach
 - Kanały nie są tworzone (nie są wymagane)
 
-## Bezpieczeństwo i uprawnienia
-
-- **Wymagane uprawnienie:** `POST_NOTIFICATIONS` (Android 13+)
-- **Kod żądania:** `AppConfig.NOTIFICATION_PERMISSION_REQUEST_CODE`
-- **Walidacja uprawnień:** Sprawdza uprawnienia przed każdym wysłaniem
-
 ## Ograniczenia platformowe
 
 - **Android Only:** Wykorzystuje natywne API Android
@@ -149,9 +142,3 @@ Serwis używa następujących stałych z `AppConfig`:
 - Nie wysyła powiadomień bez odpowiednich uprawnień
 - Domyślna ikona systemowa (może wymagać customizacji)
 
-## Integracja z aplikacją
-
-Serwis jest używany głównie do:
-- Powiadomień o nowych wiadomościach w czatach
-- Alertów o zadaniach i przypomnieniach
-- Powiadomień systemowych aplikacji

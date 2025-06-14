@@ -4,7 +4,6 @@ sidebar_position: 17
 
 # QrCodeService
 
-## Opis ogólny
 
 `QrCodeService` jest serwisem odpowiedzialnym za skanowanie kodów QR w aplikacji FamilyVault. Umożliwia uruchamianie systemowego skanera kodów QR, obsługę wyniku skanowania oraz dekodowanie zaszyfrowanych danych członków rodziny z kodów QR.
 
@@ -119,12 +118,6 @@ Serwis jest używany głównie do:
 - Skanowania kodów QR z danymi nowych członków rodziny
 - Procesu dołączania do grup rodzinnych przez kody QR
 - Bezpiecznego transferu danych uwierzytelniających
-
-## Bezpieczeństwo
-
-- Dane w kodach QR są szyfrowane przez `PayloadEncryptor`/`PayloadDecryptor`
-- Automatyczna walidacja formatu i zawartości kodu QR
-- Graceful handling nieprawidłowych lub uszkodzonych kodów
 
 ## Ograniczenia platformowe
 
