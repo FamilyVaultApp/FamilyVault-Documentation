@@ -1,0 +1,8 @@
+{
+  "label": "Dokumentacja techniczna",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Dokumentacja techniczna dla deweloperów zawierająca endpointy API i przewodniki integracji."
+  }
+}
