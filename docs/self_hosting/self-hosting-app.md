@@ -26,5 +26,4 @@ Aby połączyć aplikację FamilyVault z własnym serwerem skorzystaj z poniższ
 
 
 ![self-hosting-after.png](img/self-hosting-after.png)  
-**Widok po połączeniu** – aplikacja działa już w trybie self-hostingu. Dane będą przechowywane i przetwarzane wyłącznie na skonfigurowanym serwerze. \
-**Następne kroki objaśnione są w sekcji [Pierwsze uruchomienie aplikacji / Załóż lub dołącz do grupy rodzinnej ](../first_launch/first-launch.md/#załóż-lub-dołącz-do-grupy-rodzinnej).**
+**Widok po połączeniu** – aplikacja działa już w trybie self-hostingu. Dane będą przechowywane i przetwarzane wyłącznie na skonfigurowanym serwerze.

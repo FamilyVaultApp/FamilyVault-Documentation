@@ -10,7 +10,7 @@ const config: Config = {
     favicon: 'img/favicon.ico',
 
     // Set the production url of your site here
-    url: 'https://your-docusaurus-site.example.com',
+    url: 'https://familyvault.pl',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/pz2024/zesp01/docs',
@@ -27,8 +27,8 @@ const config: Config = {
     // useful metadata like html lang. For example, if your site is Chinese, you
     // may want to replace "en" with "zh-Hans".
     i18n: {
-        defaultLocale: 'en',
-        locales: ['en'],
+        defaultLocale: 'pl',
+        locales: ['pl'],
     },
 
     presets: [
@@ -39,8 +39,6 @@ const config: Config = {
                     sidebarPath: './sidebars.ts',
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
                 theme: {
                     customCss: './src/css/custom.css',
@@ -58,12 +56,6 @@ const config: Config = {
             },
             items: [
                 {
-                    type: 'docSidebar',
-                    sidebarId: 'tutorialSidebar',
-                    position: 'left',
-                    label: 'Tutorial',
-                },
-                {
                     href: 'https://github.com/orgs/FamilyVaultApp',
                     label: 'GitHub',
                     position: 'right',
@@ -74,16 +66,7 @@ const config: Config = {
             style: 'dark',
             links: [
                 {
-                    title: 'Docs',
-                    items: [
-                        {
-                            label: 'Tutorial',
-                            to: '/docs/intro',
-                        },
-                    ],
-                },
-                {
-                    title: 'Community',
+                    title: 'Odnośniki',
                     items: [
                         {
                             label: 'Strona projektu',
