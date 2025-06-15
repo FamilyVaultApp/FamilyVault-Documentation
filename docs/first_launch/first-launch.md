@@ -14,7 +14,7 @@ Po uruchomieniu aplikacji po raz pierwszy przywita Cię ekran wyboru sposobu po�
 
 Jeśli nie masz wiedzy technicznej wybierz **rozwiązanie chmurowe** - nie wymaga ono żadnej konfiguracji nadal oferując pełne bezpieczeństwo Twoich danych.
 
-Jeżeli posiadasz wiedzę techniczną i chciałbyś skorzystać z własnego serwera, musisz takowy najpierw przygotować. Szczegółowe instrukcje na ten temat znajdziesz na stronie [Samodzielna konfiguracja PrivMX Bridge](../self_hosting/self-hosting-intro.md). Po przygotowaniu konfiguracji wybierz opcję **PrivMX Bridge**.
+Jeżeli posiadasz wiedzę techniczną i chciałbyś skorzystać z własnego serwera, musisz takowy najpierw przygotować. Szczegółowe instrukcje na ten temat znajdziesz na stronie [Samodzielna konfiguracja PrivMX Bridge](../self_hosting/self-hosting-app.md). Po przygotowaniu konfiguracji wybierz opcję **PrivMX Bridge**.
 
 Po zaznaczeniu odpowiedniej opcji kliknij przycisk **Dalej** znajdujący się u dołu ekranu.
 
